@@ -1,14 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import MarqueeComponent from "@/components/marquee/marquee";
 import defaultImage from "@/public/default-placeholder.png";
 import { removeStopMarquee } from "@/utils/functions";
-import Image from "next/image";
 import { useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import "./header.styles.css";
 import { SectonsAcnor } from "../sections-ancor";
 import { HeaderType } from "./header.models";
+import "./header.styles.css";
 
 const Header = ({ ancor }: HeaderType) => {
   useEffect(() => {

@@ -10,10 +10,14 @@
   },
   "dependencies": {
     "@trendyol-js/react-carousel": "^3.0.2",
+    "@types/react-image-gallery": "^1.2.4",
+    "axios": "^1.6.7",
+    "firebase": "^10.8.0",
     "next": "14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-image-gallery": "^1.3.0",
     "react-multi-carousel": "^2.8.4",
     "react-simple-marquee": "^1.3.2",
     "sharp": "^0.33.2"
