@@ -11,6 +11,12 @@
   }
 }
 
+@layer base {
+  * {
+    transition: all 0.3s;
+  }
+}
+
 * {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -21,4 +27,8 @@ html {
 
 .react-multi-carousel-list {
   padding-bottom: 40px;
+}
+
+.react-multiple-carousel__arrow {
+  z-index: 5 !important;
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import favicon from "@/public/default-favicon.ico";
 import "../styles/globals.css";
+import Layout from "@/components/sections/layout/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,9 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href={favicon.src} />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }

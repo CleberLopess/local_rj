@@ -8,8 +8,9 @@ import { useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import "./header.styles.css";
 import { SectonsAcnor } from "../sections-ancor";
+import { HeaderType } from "./header.models";
 
-const Header = () => {
+const Header = ({ ancor }: HeaderType) => {
   useEffect(() => {
     removeStopMarquee();
   }, []);
@@ -24,7 +25,10 @@ const Header = () => {
   ));
 
   return (
-    <header className="h-svh relative flex justify-center items-center">
+    <header
+      className="h-svh relative flex justify-center items-center"
+      id={ancor}
+    >
       <section className="w-full h-full overflow-hidden">
         <div className="flex">
           <MarqueeComponent direction={"top-bottom"} speed={2}>
