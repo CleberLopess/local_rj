@@ -25,14 +25,10 @@ export const Release = () => {
     fetchDataImoveis();
   }, [fetchDataImoveis]);
 
-  const dataPromosPraMorar: CardRealtyType[] = useMemo(() => {
+  const dataTodosImoveis: CardRealtyType[] = useMemo(() => {
     if (!imoveis.length) return [];
 
-    const data = imoveis?.filter((imovel) => imovel.promosPraMorar);
-
-    if (!data.length) return [];
-
-    return data.map((imovel) => {
+    return imoveis?.map((imovel) => {
       return {
         id: imovel.nomeImovel,
         imagem: imovel.imagens[0],
@@ -45,7 +41,7 @@ export const Release = () => {
   return (
     <>
       {/* <Banner /> */}
-      <FullRealty titleSection="Promoções" items={dataPromosPraMorar} />
+      <FullRealty titleSection="Todos os imóveis" items={dataTodosImoveis} />
     </>
   );
 };

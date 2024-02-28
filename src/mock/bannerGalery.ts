@@ -1,4 +1,4 @@
-import { BannerGalleryType } from "@/components/banner-gallery/banner-gallery.modules";
+import { BannerGalleryType } from "@/components/banner-gallery/banner-gallery.models";
 import defaultImage from "@/public/default-placeholder.png";
 
 export const mockBanner: BannerGalleryType[] = [

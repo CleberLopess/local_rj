@@ -1,5 +1,6 @@
 export type CardRealtyType = {
-  title: string;
-  description: string;
-  id: number;
+  imagem: string;
+  nomeImovel: string;
+  id: string;
+  pequenaDescricao: string;
 };

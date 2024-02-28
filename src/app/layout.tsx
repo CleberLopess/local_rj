@@ -1,8 +1,10 @@
+import Layout from "@/components/sections/layout/layout";
+import { ImoveisProvider } from "@/context/imoveis/imoveis";
+import { ImagensHomeProvider } from "@/context/imagensHome/imagensHome";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import favicon from "@/public/default-favicon.ico";
 import "../styles/globals.css";
-import Layout from "@/components/sections/layout/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <head>
-        <link rel="shortcut icon" href={favicon.src} />
-      </head>
-      <body className={inter.className}>
-        <Layout>{children}</Layout>
-      </body>
-    </html>
+    <ImoveisProvider>
+      <ImagensHomeProvider>
+        <html lang="pt-br">
+          <head>
+            <link rel="shortcut icon" href={favicon.src} />
+          </head>
+          <body className={inter.className}>
+            <Layout>{children}</Layout>
+          </body>
+        </html>
+      </ImagensHomeProvider>
+    </ImoveisProvider>
   );
 }

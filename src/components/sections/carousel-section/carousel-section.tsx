@@ -9,6 +9,8 @@ const CarouselSection = ({
   pushRoute,
   items,
 }: CarouselSectionType) => {
+  if (!items.length) return;
+
   return (
     <section
       id={ancor}

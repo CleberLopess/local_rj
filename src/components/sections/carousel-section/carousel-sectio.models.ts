@@ -1,9 +1,9 @@
 import { CardRealtyType } from "@/components/card-realty/card-realty.models";
-import { SectonsAcnor } from "../sections-ancor";
+import { SectionsAcnor } from "../sections-ancor";
 
 export type CarouselSectionType = {
-  items: CardRealtyType[];
+  items: CardRealtyType[] | [];
   titleSection: string;
   pushRoute?: string;
-  ancor: SectonsAcnor;
+  ancor: SectionsAcnor;
 };

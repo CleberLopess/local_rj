@@ -5,8 +5,8 @@ import { fullRealtyType } from "./full-realty.models";
 export const FullRealty = ({ items, titleSection }: fullRealtyType) => {
   return (
     <section>
-      <div className="container flex flex-col gap-16 m-auto ">
-        <h1 className="text-2xl font-bold">{titleSection}</h1>
+      <div className="container flex flex-col gap-16 m-auto mt-28 ">
+        <h1 className="text-6xl text-center font-bold">{titleSection}</h1>
 
         <div className="flex flex-wrap gap-8 justify-center">
           {items?.map((el, index) => (

@@ -1,21 +1,30 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 import favicon from "../../../public/local-logo.png";
 import { removeScroll } from "../../../utils/functions";
-import { SectonsAcnor } from "../sections-ancor";
+import { ImoveisContext } from "@/context/imoveis/imoveis";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const { imoveis } = useContext(ImoveisContext);
+
+  const isLancamentos =
+    imoveis.length > 0 && imoveis.find((imovel) => imovel.lancamento);
+  const isPromocoes =
+    imoveis.length > 0 && imoveis?.find((imovel) => imovel.promosPraMorar);
 
   useEffect(() => {
     removeScroll(isOpen);
   }, [isOpen]);
 
-  const toggleNavbar = () => {
+  const toggleNavbar = (href?: string) => {
     setIsOpen(!isOpen);
+    if (href) router.push(href);
   };
 
   const navMobile = () => {
@@ -25,7 +34,10 @@ const Navbar = () => {
           <Image className="w-full" src={favicon} alt="lobster" />
         </a>
 
-        <button className="flex w-8 h-6 absolute top-7" onClick={toggleNavbar}>
+        <button
+          className="flex w-8 h-6 absolute top-7"
+          onClick={() => toggleNavbar()}
+        >
           <IoMdClose
             className={`absolute w-full h-full    ${
               isOpen ? `opacity-100` : `opacity-0`
@@ -45,14 +57,24 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex flex-col justify-center items-center gap-8 w-full text-xl border-b-4 pb-8 lg:flex-row lg:gap-4 mt-8 lg:mt-0 ">
-            <li className="hover:scale-110 ">
-              <a href="/lancamentos" onClick={toggleNavbar}>
-                Lançamentos
-              </a>
-            </li>
             <li className="hover:scale-110">
-              <a href="/promocoes" onClick={toggleNavbar}>
-                Promoções
+              <a onClick={() => toggleNavbar("/")}>Inicio</a>
+            </li>
+
+            {isLancamentos && (
+              <li className="hover:scale-110 ">
+                <a onClick={() => toggleNavbar("/lancamentos")}>Lançamentos</a>
+              </li>
+            )}
+            {isPromocoes && (
+              <li className="hover:scale-110">
+                <a onClick={() => toggleNavbar("/promocoes")}>Promoções</a>
+              </li>
+            )}
+
+            <li className="hover:scale-110">
+              <a onClick={() => toggleNavbar("/todos-os-imoveis")}>
+                Todos os imóveis
               </a>
             </li>
           </ul>
@@ -64,15 +86,30 @@ const Navbar = () => {
   const navDesktop = () => {
     return (
       <div className="hidden md:flex container w-full relative font-Poppins items-center">
-        <a className="w-36 mr-auto" href="/">
+        <a className="w-36 mr-auto" onClick={() => router.push("/")}>
           <Image className="w-full" src={favicon} alt="lobster" />
         </a>
         <ul className="flex gap-8">
           <li className="hover:scale-110">
-            <a href="/lancamentos">Lançamentos</a>
+            <a onClick={() => toggleNavbar("/")}>Inicio</a>
           </li>
+
+          {isLancamentos && (
+            <li className="hover:scale-110">
+              <a onClick={() => toggleNavbar("/lancamentos")}>Lançamentos</a>
+            </li>
+          )}
+
+          {isPromocoes && (
+            <li className="hover:scale-110">
+              <a onClick={() => toggleNavbar("/promocoes")}>Promoções</a>
+            </li>
+          )}
+
           <li className="hover:scale-110">
-            <a href="/promocoes">Promoções</a>
+            <a onClick={() => toggleNavbar("/todos-os-imoveis")}>
+              Todos os imóveis
+            </a>
           </li>
         </ul>
       </div>

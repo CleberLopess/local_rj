@@ -1,5 +1,5 @@
 import ImageGallery from "react-image-gallery";
-import { ItemsBannerGallery } from "./banner-gallery.modules";
+import { ItemsBannerGallery } from "./banner-gallery.models";
 import { useEffect, useState } from "react";
 
 const BannerGallery = ({ item }: ItemsBannerGallery) => {

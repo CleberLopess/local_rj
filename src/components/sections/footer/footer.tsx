@@ -1,11 +1,11 @@
-import { SectonsAcnor } from "../sections-ancor";
+import { SectionsAcnor } from "../sections-ancor";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-6">
       <div className="container mx-auto flex flex-col justify-between items-center gap-8">
         <div className="flex flex-col gap-4 text-center">
-          <a className="hover:scale-110" href={`#${SectonsAcnor.HEADER}`}>
+          <a className="hover:scale-110" href={`#${SectionsAcnor.HEADER}`}>
             Início
           </a>
           <a

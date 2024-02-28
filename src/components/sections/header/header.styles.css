@@ -17,3 +17,33 @@
 .animate-bounce {
   animation: bounce 2s infinite;
 }
+
+.react-simple-marquee {
+  width: 33.33%;
+}
+
+.image-gallery,
+.image-gallery-image,
+.image-gallery-content,
+.image-gallery-slide-wrapper,
+.image-gallery-slides,
+.image-gallery-slide.image-gallery-center,
+.image-gallery-swipe,
+.image-gallery-slide {
+  height: 100%;
+}
+
+.react-simple-marquee__marquee-wrapper {
+  width: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  .image-gallery-slide-wrapper {
+    width: 100% !important;
+    /* Outros estilos para largura maior que 768 pixels, se necessário */
+  }
+}
+
+.image-gallery-image {
+  object-fit: cover !important;
+}

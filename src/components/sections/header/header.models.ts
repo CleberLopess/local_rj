@@ -1,5 +1,6 @@
-import { SectonsAcnor } from "../sections-ancor";
+import { SectionsAcnor } from "../sections-ancor";
 
 export type HeaderType = {
-  ancor: SectonsAcnor;
+  ancor: SectionsAcnor;
+  images: string[];
 };
