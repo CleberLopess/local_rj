@@ -14,7 +14,7 @@ export const MapsSecton = ({
         ou pelo link do{" "}
         <a
           className="text-blue-500 cursor-pointer hover:underline"
-          href={`https://api.whatsapp.com/send/?phone=$${process.env.NUMBER_WPP}&text&type=phone_number&app_absent=0`}
+          href={`https://api.whatsapp.com/send?phone=${process.env.NUMBER_WPP}`}
           target="__blanck"
         >
           whatsapp
