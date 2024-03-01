@@ -41,8 +41,6 @@ const Header = ({ ancor, images }: HeaderType) => {
     );
   }, [photoArray]);
 
-  console.log(photoArray);
-
   return (
     <header
       className="h-svh relative flex justify-center items-center"
