@@ -7,12 +7,11 @@ import { getDatabase } from "firebase/database";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.FIRE_BASE_KEY,
-  authDomain: "localrj-6f8c3.firebaseapp.com",
-  databaseURL: "https://localrj-6f8c3-default-rtdb.firebaseio.com",
-  projectId: "localrj-6f8c3",
-  storageBucket: "localrj-6f8c3.appspot.com",
-  messagingSenderId: "468511731851",
-  appId: "1:468511731851:web:114f6e934738325797a48e",
+  authDomain: "https://site-localrj-default-rtdb.firebaseio.com/",
+  projectId: "site-localrj",
+  storageBucket: "site-localrj.appspot.com",
+  messagingSenderId: "749595535636",
+  appId: "1:749595535636:web:373fc8181f4773f1c3ba01",
 };
 
 // Initialize Firebase
